@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Central College News</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script src="shiv.js"></script>
+		<script type="text/javascript">
+
+    function vidplay() {
+       var video = document.getElementById("Video1");
+       var button = document.getElementById("play");
+       if (video.paused) {
+          video.play();
+          button.textContent = "Pause";
+       } else {
+          video.pause();
+          button.textContent = "Play";
+       }
+    }
+
+    function restart() {
+        var video = document.getElementById("Video1");
+        video.currentTime = 0;
+    }
+
+    function skip(value) {
+        var video = document.getElementById("Video1");
+        video.currentTime += value;
+    }      
+</script>
+  </head>
+  <body>
+    <header>
+	<h2>Central College News</h2>
+    </header>
+    <nav>
+      <table style="topmenu" align="center">
+        <tr>
+          <td class="top"><a href="index.html">Home</a></td>
+          <td class="top"><a href="projectplanning.html">Project Planning</a></td>
+          <td class="top"><a href="webdesign.html">Website Design</a></td>
+          <td class="top"><a href="flash.html">Flash</a></td>
+          <td class="selected"><a href="video.html">Video</a></td>
+          <td class="top"><a href="summary.html">Summary</a></td>
+        </tr>
+      </table>
+    </nav>
+    <div id="menu2">
+		<table style="bottommenu" align="center">
+			<tr>
+				<td class="bottom"><a style="link" href="videostory.html">Storyboard</a></td>
+				<td class="bottom"><a style="link" href="videoraw.html">Raw Video</a></td>
+				<td class="bottom"><a style="link" href="videocreation.html">Creation</a></td>
+				<td class="bottom"><a style="link" href="news.html">News Report</a></td>
+			</tr>
+		</table>
+    </div>
+    <article>
+		<div id="news">
+			<h1>Top Stories</h1>
+			<p class="center">Beeston high street like Labyrinth</p>
+			<p class="center">Trams cause chaos</p>
+			<p class="center">Central discriminates against E-Cig smokers</p>
+		</div>
+      <h1>News Report</h1> 
+      <h1><video id="Video1" width="60%">
+      <source src="docs/finishednews.mp4" type="video/mp4" /> 
+	  </video></h1>
+
+	<div id="buttonbar">
+    <button id="restart" onclick="restart();">Restart</button> 
+    <button id="rew" onclick="skip(-10)">Rewind</button>
+    <button id="play" onclick="vidplay()">Play</button>
+    <button id="fastFwd" onclick="skip(10)">Forward</button>
+	</div>
+    </article>
+    <footer>
+		<p class="centerwhite">© Joe Burnside 2014</p>
+    </footer>
+  </body>
+</html>
